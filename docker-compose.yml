@@ -1,0 +1,33 @@
+version: "3"
+services:
+  app:
+    image: php:7.2-apache
+    volumes:
+      - "./src/:/var/www/html"
+      - "/etc/php.ini:/usr/local/etc/php.ini"
+    ports:
+      - 4200:80
+      - 443:443 # for future ssl traffic
+    privileged: true
+    # command: docker-php-ext-install pdo pdo_mysql
+  db:
+    image: mysql:latest
+    environment:
+      - MYSQL_DATABASE=php_docker
+      - MYSQL_USER=php_docker
+      - MYSQL_PASSWORD=password
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+    volumes:
+      - "./db:/docker-entrypoint-initdb.d"
+    privileged: true
+    command: --default-authentication-plugin=mysql_native_password
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8080:80
+    restart: always
+    environment:
+      - PMA_HOST=db
+      - PMA_PORT=3306
+    depends_on:
+      - db
