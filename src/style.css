@@ -8,6 +8,9 @@
 body {
     background-color: #435165;
 }
+.logo {
+    text-align: center;
+}
 .login {
     width: 400px;
     background-color: #ffffff;
