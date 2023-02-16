@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db:3306
--- Généré le : jeu. 09 fév. 2023 à 22:06
+-- Généré le : jeu. 16 fév. 2023 à 19:47
 -- Version du serveur : 8.0.32
 -- Version de PHP : 8.1.15
 
@@ -38,8 +38,9 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`id`, `username`, `password`) VALUES
-(1, 'test', '$2y$10$SfhYIDtn.iOuCW7zfoFLuuZHX6lja4lF4XA4JqNmpiH/.P3zB8JCa'),
-(2, 'test2', '$2y$10$D91.NOcOADMABAXpqItFjecXTRBx5Ozhgri0AL/1OBBhD73NlIZ1O');
+(3, 'robin', '$2y$10$3eq49DIME2kyMkZpBdh45O5I7s55m7qvHS/C.dnHMe9pxrwPbw4xO'),
+(4, 'yann', '$2y$10$FZrkSzuXztL/a21L4/kcVuOeHv0ZS4rgMuTH3qUkQKv4vfPNgikjK'),
+(5, 'patrice', '$2y$10$CXyXourbDNd.QTW99mBOE.76QA5spxcOMBDy3GPyEwBtYMyhKoY7S');
 
 --
 -- Index pour les tables déchargées
@@ -59,7 +60,7 @@ ALTER TABLE `accounts`
 -- AUTO_INCREMENT pour la table `accounts`
 --
 ALTER TABLE `accounts`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

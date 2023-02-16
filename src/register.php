@@ -13,6 +13,9 @@
 	    exit('Please complete the registration form');
     }
 
+    $_POST['username'] = strip_tags($_POST['username']);
+    $_POST['password'] = strip_tags($_POST['password']);
+
     // We need to check if the account with that username exists.
     $stmt = $db->prepare('SELECT id, password FROM accounts WHERE username = ?');
 	$stmt->execute([$_POST['username']]);
@@ -25,8 +28,16 @@
         if (preg_match('/^[a-zA-Z0-9]+$/', $_POST['username']) == 0) {
             exit('Username is not valid!');
         }
-        if (strlen($_POST['password']) > 20 || strlen($_POST['password']) < 5) {
-            exit('Password must be between 5 and 20 characters long!');
+        if (strlen($_POST['password']) > 20 || strlen($_POST['password']) < 8) {
+            exit('Password must be between 8 and 20 characters long!');
+        }
+        $password_regex = "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/"; 
+        if (preg_match($password_regex, $_POST['password'])==0){
+            exit('Password must be between 8 and 20 characters long and containing at least 1:<br>
+            <li>Capital letter</li>
+            <li>Lowercase letter</li>
+            <li>Number</li>
+            <li>Symbol (#?!@$%^&*-)</li>');
         }
 
 	    // Username doesn't exists, insert new account

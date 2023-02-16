@@ -1,10 +1,15 @@
 # Login Form Security Project
 
 ## Features:
-- login
-- create account
-- logout
-- reset form
+- Login
+- Create account
+- Logout
+- Reset form
+- Limit to 6 try to connection before ban of 1 min
+- Limit access to folder of web page
+- b64 encoding of the logo image
+- Apply a regex on password (lowercase, uppercase, symbol, number, size)
+- Hash of all password in database
 
 ## Technologies
 
@@ -43,9 +48,12 @@ phpMyAdmin:
 Web Page:
 - accounts:
     - account1
-        - username: test
-        - password: test
+        - username: robin
+        - password: Pass-word93
     - account2
-        - username: test2
-        - password: test2
+        - username: yann
+        - password: Pass-word93
+    - account3
+        - username: patrice
+        - password: New-password95
 
