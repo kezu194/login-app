@@ -35,6 +35,6 @@
         // Incorrect username
         echo 'Incorrect username and/or password!';
     }
-    echo "<br><a href='index.html'>login page</a>";
+    echo "<br><a href='index.php'>login page</a>";
     
 ?>

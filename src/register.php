@@ -35,7 +35,7 @@
 	    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $uniqid = uniqid();
 	    $stmt->execute([$_POST['username'], $password]);
-	    echo "You have successfully registered! You can now login!<br><a href='index.html'>login page</a>";
+	    echo "You have successfully registered! You can now login!<br><a href='index.php'>login page</a>";
     }
 	
 ?>

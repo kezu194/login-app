@@ -18,7 +18,11 @@ In order to execute this project and visualize the web site, you need to have **
 
 ## How to launch
 
-- In a terminal located in the folder of the project, type: `docker-compose up`
+- In a terminal located in the folder of the project, type: 
+```
+$ docker-compose up
+```
+
 - Then you need to add a specific package to the PHP-Apache docker. Open a new terminal and type the following command in the right order:
 ```
 $ docker ps (read the Container ID of the 'php:7.2-apache')
